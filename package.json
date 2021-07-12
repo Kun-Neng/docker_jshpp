@@ -1,0 +1,30 @@
+{
+  "name": "jshpp",
+  "version": "0.1.0",
+  "description": "Node Package for A* Algorithm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kun-Neng/hpp.git#main"
+  },
+  "keywords": [
+    "Path Planning",
+    "A*"
+  ],
+  "author": "Kun-Neng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kun-Neng/hpp/issues"
+  },
+  "homepage": "https://github.com/Kun-Neng/hpp/tree/main#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "jshpp": "0.1.0",
+    "morgan": "^1.10.0"
+  }
+}
