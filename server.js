@@ -88,15 +88,20 @@ app.post(postUrl, async (req, res) => {
                 console.log(`Accessing from URL...`);
 
                 const jsonObject = req.body;
-                const { elapsedMS, path, resultMessage } = getPath(jsonObject);
+
+                const hasGrouping = jsonObject.grouping;
+                const isGrouping = hasGrouping ? Number(hasGrouping.radius) ? true : false : false;
+
+                const { elapsedMS, path, refinedPath, resultMessage } = getPath(jsonObject);
 
                 res.send({
                     status: true,
                     message: resultMessage,
-                    grouping: false,
+                    grouping: isGrouping,
                     data: {
                         elapsedMS,
-                        path
+                        path,
+                        refinedPath
                     }
                 });
             }
