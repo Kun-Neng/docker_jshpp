@@ -41,10 +41,11 @@ const getPath = (scenario) => {
         const result = aStar.calculatePath();
         const elapsedMS = result.elapsed_ms;
         const path = result.path;
+        const refinedPath = result.refined_path;
         const resultMessage = result.message;
         // console.log(path);
 
-        return { elapsedMS, path, resultMessage };
+        return { elapsedMS, path, refinedPath, resultMessage };
     } catch (err) {
         console.error(err);
     }
@@ -68,7 +69,7 @@ const responsePathFromBuffer = (file, res) => {
     const jsonObject = JSON.parse(fileDataString);
 
     try {
-        const { elapsedMS, path, resultMessage } = getPath(jsonObject);
+        const { elapsedMS, path, refinedPath, resultMessage } = getPath(jsonObject);
         responsePath(file, elapsedMS, path, resultMessage, res);
     } catch (err) {
         console.error(err);
